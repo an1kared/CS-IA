@@ -1,0 +1,38 @@
+<head>
+  <link rel="stylesheet" href="edit.css" />
+</head>
+
+<body>
+  <h1>Edit Task</h1>
+
+  <form id="editForm" class="editForm">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" value="" name="name">
+    </div>
+
+    <div>
+      <label for="duedate">Due Date:</label>
+      <input type="date" id="duedate" value="" name="duedate">
+    </div>
+
+    <div>
+      <label for="priority">Priority of task:</label>
+      <select id="priority" name="priority">
+
+        <option> High </option>
+        <option> Medium </option>
+        <option> Low </option>
+
+      </select>
+    </div>
+
+    <div>
+      <label for="time">Time to complete:</label>
+      <input id="time" value="" name="time">
+    </div>
+
+    <button class="but" type="submit">Save</button>
+  </form>
+  <script>require('./edit.js')</script>
+</body>

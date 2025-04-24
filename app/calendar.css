@@ -1,0 +1,42 @@
+h1{
+  text-align: center;
+}
+
+.back{
+  margin-top: 60px;
+}
+
+
+.text{
+  padding: 60px 50px;
+  background-color: rgb(253, 251, 255);
+  margin: 10px;
+  color:#141414;
+  word-wrap: break-word;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  
+}
+
+#editor {
+  width: 600px;
+  height: 300px;
+  margin-left:10px;
+}
+ 
+
+.ql-toolbar {
+  width: 600px;
+  margin-top:100px;
+  margin-left:10px;
+  background-color: #96E9C6;;
+}
+
+.ql-save-button{
+  margin-right: 10px;
+}
+
+#calendar .fc-toolbar.fc-header-toolbar button {
+  background-color: #921bed; 
+  color: #fffafa; 
+}

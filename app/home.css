@@ -1,0 +1,36 @@
+.home {
+    text-align: center;
+     margin-bottom: 20px;
+}
+
+.button {
+   
+    font-size: 20;
+    font-family: 'Times New Roman', Times, serif; 
+    color: rgb(255, 251, 251);
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: #921bed;
+    margin-bottom: 50px;
+}
+
+.button1 {
+    font-size: 20;
+    font-family: 'Times New Roman', Times, serif; 
+    color: rgb(246, 240, 240);
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color:#921bed;
+    margin-bottom: 300px
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}

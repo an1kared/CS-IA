@@ -1,0 +1,25 @@
+label{
+    padding-right: 5px;
+    font-size: 20px;
+    padding-left: 5px;
+    }
+    input, select {
+    background-color:#C4E4FF;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    font-family: 'Times New Roman', Times, serif; 
+    }
+    .but{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif; 
+    color: rgb(255, 254, 254);
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: rgb(185, 49, 252);
+    position: absolute;
+    top: 300;
+    left: 175;
+    }
+    h1 {
+    text-align: center;
+    }
