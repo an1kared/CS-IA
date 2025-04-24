@@ -1,0 +1,64 @@
+<head>
+    <link rel="stylesheet" href="taskManager.css" />
+  </head>
+  
+  <body>
+    <h1>Admin Manager</h1>
+  
+
+    <div id="task">
+      <table id="myTable">
+        <thead>
+  
+          <th> Admin name</th>
+          <th> Email </th>
+          
+  
+        </thead>
+        <tbody id="taskList">
+  
+        </tbody>
+      </table>
+  
+    </div>
+
+    <div id="task">
+      <table id="myTable">
+        <thead>
+  
+          <th> User name</th>
+          <th> Email </th>
+          
+  
+  
+        </thead>
+        <tbody id="userList">
+  
+        </tbody>
+      </table>
+  
+    </div>
+  
+    
+
+    <form class="form">
+    <div class="code">
+      <label >Admin key: </label>
+      <input  name="key" id="key" required>
+
+   
+
+  <button type="submit" class="set" id="set">
+    Set
+  </button>
+</div>
+  </form>
+  
+  <div id="message"></div>
+
+  <div class="back">
+    <a href="index.html">Log out</a>
+    
+  </div>
+  
+<script>require('./control.js')</script>

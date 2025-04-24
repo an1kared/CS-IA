@@ -1,0 +1,32 @@
+input {
+    background-color:#C4E4FF;
+    margin-bottom: 50px;
+}
+
+
+label {
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 30px;
+}
+
+.form {
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+    color: rgb(249, 238, 238);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #921bed;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+}
+

@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" href="add.css" />
+    </head>
+    <body>
+    <h1>
+    Add new task
+    </h1>
+    <form id="addform" class="addform">
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" value="" name="name" required>
+        </div>
+        <div>
+            <label for="duedate">Due Date:</label>
+            <input type="date" id="duedate" value="" name="duedate" required>
+        </div>
+        <div>
+            <label for="priority">Priority of task:</label>
+            <select id="priority" name="priority" required>
+                <option> High </option>
+                <option> Medium </option>
+                <option> Low </option>
+            </select>
+        </div>
+        <div>
+            <label for="time">Time to complete (HH:MM:SS):</label>
+            <input id="time" value="" name="time">
+        </div>
+            
+            <button class="but" type="submit" id="createTask">Add Task</button>
+
+        </form>
+
+    <script>require('./add.js')</script>
+    </body>
