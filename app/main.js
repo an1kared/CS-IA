@@ -4,14 +4,8 @@ const { app, BrowserWindow, ipcMain, Notification } = electron;
 require('./database')
 
 var mySql = require('mysql2');
-const { getConnection } = require('./database');
-var connection = mySql.createConnection({
-  host: 'localhost',
-  port: '3306',
-  user: 'root',
-  password: "MSBiryani_1",
-  database: 'taskmanager_electron'
-});
+const connection = require('./database');
+
 
 connection.connect();
 
@@ -102,13 +96,8 @@ ipcMain.on("update-form-data", async (event, formData) => {
   try {
     console.log('Received signin:submit message with data:', formData);
     // establish connection with mysql database
-    const connection = await mySql.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+    const connection = require('./database');
+
     console.log('Connected to the database');
     //updating task data
     const result = await connection.execute(`UPDATE info SET Name = ?,duedate = ?, Priority = ?,TIME = ? WHERE Id = ?`,
@@ -125,13 +114,8 @@ ipcMain.on("update-form-data", async (event, formData) => {
 });
 
 var mySql = require("mysql2");
-var connection = mySql.createConnection({
-  host: "localhost",
-  port: "3306",
-  user: "root",
-  password: "MSBiryani_1",
-  database: "taskmanager_electron",
-});
+const connection = require('./database');
+
 
 connection.connect();
 
@@ -143,13 +127,8 @@ ipcMain.on("task:add", async (event, formData) => {
 
   try {
    
-    const connection = await mySql.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+    const connection = require('./database');
+
     console.log('Connected to the database');
     console.log(userId)
     //inserting data into the table
@@ -176,13 +155,8 @@ ipcMain.on("text:notes", async (event, text) => {
   console.log('Received add message with data:', text);
 
   try {
-    const connection = await mySqlPromise.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+    const connection = require('./database');
+
 
     const [rows] = await connection.query("SELECT * FROM notes WHERE userid=?", [userId]);
     if (rows.length > 0) {
@@ -212,13 +186,8 @@ ipcMain.on("text:notes", async (event, text) => {
 
 ipcMain.on("open", async (event) => {
   
-    const connection = await mySqlPromise.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+  const connection = require('./database');
+
     const[result] = await connection.query(`SELECT * FROM notes where userid=?`, [userId])
     console.log(userId)
     console.log(result)
@@ -239,13 +208,8 @@ class User{
 
   async getConnection() {
     try {
-      const connection = await mySql.createConnection({
-        host: 'localhost',
-        port: '3306',
-        user: 'root',
-        password: "MSBiryani_1",
-        database: 'taskmanager_electron'
-      });
+      const connection = require('./database');
+
       console.log('Connected to the database');
       return connection;
     } catch (error) {
@@ -257,13 +221,8 @@ class User{
 async signUp(data){
   try {
     
-    const connection = await mySql.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+    const connection = require('./database');
+
     console.log('Connected to the database');
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(data.password, salt);
@@ -278,13 +237,8 @@ async signUp(data){
  
 async logIn(mainWindow, data, event) {
   try {
-    const connection = await mySql.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+    const connection = require('./database');
+
 
     const[rows] = await connection.query(`SELECT * FROM ${this.table} where email=?`, [this.email], function (error, rows, fields) {
       if (error) throw error;
@@ -336,13 +290,8 @@ class Admin extends User{
 // establish connection with database
   async getConnection() {
     try {
-      const connection = await mySql.createConnection({
-        host: 'localhost',
-        port: '3306',
-        user: 'root',
-        password: "MSBiryani_1",
-        database: 'taskmanager_electron'
-      });
+      const connection = require('./database');
+
       console.log('Connected to the database');
       return connection;
     } catch (error) {
@@ -352,13 +301,8 @@ class Admin extends User{
 //function for signing up
   async signUp(data){
     try {
-      const connection = await mySql.createConnection({
-        host: 'localhost',
-        port: '3306',
-        user: 'root',
-        password: "MSBiryani_1",
-        database: 'taskmanager_electron'
-      });
+      const connection = require('./database');
+
       //generating salt for hashing
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(data.password, salt);
@@ -373,13 +317,8 @@ class Admin extends User{
 
   async logIn(mainWindow, data, event) {
     try {
-      const connection = await mySql.createConnection({
-        host: 'localhost',
-        port: '3306',
-        user: 'root',
-        password: "MSBiryani_1",
-        database: 'taskmanager_electron'
-      });
+      const connection = require('./database');
+
       
       const[rows] = await connection.query(`SELECT * FROM ${this.table} where email=?`, [this.email], function (error, rows, fields) {
         if (error) throw error;
@@ -465,13 +404,8 @@ ipcMain.on('getEmail',(event) => {
 
   ipcMain.on('getStudEmail',async(event, data) =>{
     console.log('sent')
-    const connection = await mySqlPromise.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-    });
+    const connection = require('./database');
+
 
 
       const[rows] = await connection.query(`SELECT * FROM users where userid=?`, [data])
@@ -486,13 +420,8 @@ ipcMain.on('update:key',(async (event, cKey) => {
 
   try{
     console.log('Received signin:submit message with data:', cKey);
-    const connection = await mySql.createConnection({
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: "MSBiryani_1",
-      database: 'taskmanager_electron'
-      });
+    const connection = require('./database');
+
     console.log('Connected to the database');
     const result = await connection.execute(`UPDATE admins SET \`key\` =?`,[cKey]);
     console.log('Query result:', result);
@@ -507,13 +436,8 @@ ipcMain.on('update:key',(async (event, cKey) => {
 
 ipcMain.on('get:key',async(event, data) => {
   console.log("got key message")
-  const connection = await mySql.createConnection({
-    host: 'localhost',
-    port: '3306',
-    user: 'root',
-    password: "MSBiryani_1",
-    database: 'taskmanager_electron'
-  });
+  const connection = require('./database');
+
 
     console.log(data)
   
