@@ -1,1 +1,3 @@
 Documentation/Crit_D_Video.mp4
+# Ignore sensitive database configuration files
+database.js
